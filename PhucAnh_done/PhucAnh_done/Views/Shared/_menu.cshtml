@@ -1,21 +1,17 @@
-﻿@model PagedList.IPagedList<PhucAnh_done.Models.SanPham>
-@using PhucAnh_done.Models
-@using PagedList.Mvc;
+﻿@using PhucAnh_done.Models;
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+
     var phanLoaiTheoHang = ViewData["phanLoaiTheoHang"] as List<PhanLoaiTheoHangSp> ?? new List<PhanLoaiTheoHangSp>();
     var loaiDanhMucSanPham = ViewData["loaiDanhMucSanPham"] as List<LoaiDanhMucSanPham> ?? new List<LoaiDanhMucSanPham>();
     var loaiDMSP = ViewData["loaiDMSP"] as List<DanhMucSanPham> ?? new List<DanhMucSanPham>();
     var DanhMuc = ViewData["DanhMuc"] as List<PhanLoaiSanPham> ?? new List<PhanLoaiSanPham>();
-    var model = ViewData["model"] as IEnumerable<SanPham>;
-    <link href="~/Asset/admin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 }
+
 <section>
     <div class="container cont">
-        <div id="menu"> 
+        <div id="menu">
             <div class="container">
-                <div class="row nav" style="height: 32px">
+                <div class="row nav">
                     <div class="col-md-3" id="menu1">
                         <div class="titlee">
                             <a href="">
@@ -93,39 +89,4 @@
         </div>
     </div>
 </section>
-<section>
-    <div class="container">
-        <div><h2>Kết quả tìm kiếm</h2></div>
-        <div class="row img-table">
-            @foreach (var item in Model)
-            {
-                if (item.AnhSanPham == null)
-                {
-                    item.AnhSanPham = "~/Images/productImage/a.jpg";
-                }
-                <div class="col-md-3 col" id="img-table-1">
-                    <img src="@Url.Content(item.AnhSanPham)" alt="">
-                    <a href="/detailProduct/@item.SanPhamID">@item.TenSanPham</a>
-                    <span style="font-size: 12px;">
-                        <i id="list-price">Giá niêm miết: </i>@(item.GiaNiemYet + "VND")
-                    </span>
-                    <span id="price">
-                        <i>Giá bán: </i>@(item.GiaBan)
-                    </span>
-                    <span id="pro-icon">
-                        <i class="fas fa-check" id="tick">
-                            Có
-                            hàng
-                        </i>
-                        <i class="fas fa-shopping-cart" id="cart">
-                            Giỏ hàng
-                        </i>
-                    </span>
 
-                </div>
-            }
-        </div>
-        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
-    </div>
-
-</section>

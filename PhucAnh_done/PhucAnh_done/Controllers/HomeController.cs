@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PhucAnh_done.DAO;
 using PhucAnh_done.Models;
 
 namespace PhucAnh_done.Controllers
@@ -45,6 +46,57 @@ namespace PhucAnh_done.Controllers
             }
             return View();
         }
+        public JsonResult ListName(string keywword)
+        {
+            var data = new SanPhamDAO().ListName(keywword);
+            return Json(new
+            {
+                data = data,
+                status = true
+            }, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult SearchProduct(string keyword, int page = 1, int pageSize=4)
+        {
+            using(var db= new ApplicationDbContext())
+            {
+                var phanLoaiSanPham = db.PhanLoaiSanPhams.ToList();
+                var danhMucSanPham = db.DanhMucSanPhams.ToList();
+                var loaiDanhMucSanPham = db.LoaiDanhMucSanPhams.ToList();
+                var phanLoaiTheoHang = db.PhanLoaiTheoHangSps.ToList();
+                var loaiDMSP = from dmsp in danhMucSanPham
+                               join loaiDM in loaiDanhMucSanPham on dmsp.DanhMucSanPhamPID equals loaiDM.DanhMucSanPhamPID
+                               where dmsp.DanhMucSanPhamPID == loaiDM.DanhMucSanPhamPID
+                               select dmsp;
 
+                var DanhMuc = from plsp in phanLoaiSanPham
+                              join dm in danhMucSanPham on plsp.DanhMucSanPhamID equals dm.DanhMucSanPhamID
+                              where dm.Status == true
+                              select plsp;
+
+
+                int totalRecord = 0;
+                var model = new SanPhamDAO().Search(keyword, ref totalRecord, page, pageSize);
+
+                ViewBag.Total = totalRecord;
+                ViewBag.Page = page;
+                ViewBag.keyword = keyword;
+                int maxPage = 5;
+                int totalPage = 0;
+
+                totalPage = (int)Math.Ceiling((double)(totalRecord / pageSize));
+                ViewBag.TotalPage = totalPage + 1;
+                ViewBag.MaxPage = maxPage;
+                ViewBag.First = 1;
+                ViewBag.Last = totalPage;
+                ViewBag.Next = page + 1;
+                ViewBag.Prev = page - 1;
+                ViewData["phanLoaiTheoHang"] = phanLoaiTheoHang.ToList();
+                ViewData["loaiDanhMucSanPham"] = loaiDanhMucSanPham.ToList();
+                ViewData["loaiDMSP"] = loaiDMSP.ToList();
+                ViewData["DanhMuc"] = DanhMuc.ToList();
+                return View(model);
+            }
+            
+        }
     }
 }

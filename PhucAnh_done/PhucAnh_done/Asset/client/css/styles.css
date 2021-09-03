@@ -109,7 +109,6 @@ div.container.cont, .info {
     padding-top: 20px;
     margin-left: 20px;
 }
-}
 
 #cart-header {
     background-color: red;
@@ -222,11 +221,13 @@ div.container.cont, .info {
 }
 
 #menu1 {
-    padding-top: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #menu2 {
-    padding-top: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #menu1 span {
@@ -247,18 +248,19 @@ div.container.cont, .info {
 }
 
 #menu3 {
-    padding-top:2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-color: #d00;
 }
 
     #menu3::before {
         content: '';
         display: block;
-        border: solid 30px transparent;
+        border: solid 33px transparent;
         border-bottom-color: #365899;
         position: absolute;
-        left: -32px;
-        top: -31px;
+        left: -33px;
+        top: -32px;
     }
 
 .news ul li {
@@ -375,8 +377,11 @@ div.container.cont, .info {
 
     .title a {
         color: white;
+        margin-left: 30px;
     }
-
+.h-title {
+    color: white;
+}
 .time {
     color: #999;
 }

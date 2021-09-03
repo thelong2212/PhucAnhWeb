@@ -106,5 +106,15 @@ namespace PhucAnh_done.DAO
             var DMSPTheoPhanLoai = db.SanPhams.Where(x => x.PhanLoaiSanPhamID == id).OrderByDescending(x => x.SanPhamID).ToList();
             return DMSPTheoPhanLoai;
         }
+        public List<string> ListName(string keyword)
+        {
+            return db.SanPhams.Where(x => x.TenSanPham.Contains(keyword)).Select(x => x.TenSanPham).ToList();
+        }
+        public List<SanPham> Search( string keyword, ref int totalRecord, int pageIndex = 1, int pageSize = 4)
+        {
+            totalRecord = db.SanPhams.Where(x => x.TenSanPham.Contains(keyword)).Count();
+            var model = db.SanPhams.Where(x =>x.TenSanPham.Contains(keyword)).OrderByDescending(x => x.SanPhamID).Skip((pageIndex - 1) * pageSize).Take(pageSize);
+            return model.ToList();
+        }
     }
 }

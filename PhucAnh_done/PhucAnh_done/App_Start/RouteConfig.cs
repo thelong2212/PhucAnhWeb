@@ -81,9 +81,9 @@ namespace PhucAnh_done
               new { controller = "ThanhToanHoaDon", action = "XacNhanThanhToan" }
            );
             routes.MapRoute(
-              name: "Search",
+              name: "SearchProduct",
               url: "tim-kiem",
-              new { controller = "Search", action = "Index" }
+              new { controller = "Home", action = "SearchProduct" }
            );
 
             routes.MapRoute(

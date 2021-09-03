@@ -152,7 +152,6 @@
     <Compile Include="Common\CommonGroup.cs" />
     <Compile Include="Common\CommonSession.cs" />
     <Compile Include="Common\MailHelper.cs" />
-    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="DAO\DanhMucSanPhamDAO.cs" />
     <Compile Include="DAO\DonHangDAO.cs" />
     <Compile Include="Common\Encryptor.cs" />
@@ -3052,6 +3051,8 @@
     <Content Include="Asset\client\js\bootstrap.js" />
     <Content Include="Asset\client\js\bootstrap.min.js" />
     <Content Include="Asset\client\js\detail-product.js" />
+    <Content Include="Asset\client\css\jquery-ui.css" />
+    <Content Include="Asset\client\js\jquery-ui.js" />
     <Content Include="Asset\client\js\main.js" />
     <Content Include="Asset\client\js\product.js" />
     <Content Include="Asset\client\slick-1.8.1\.gitignore" />
@@ -3562,7 +3563,10 @@
     <Content Include="Views\GioHang\gioHang.cshtml" />
     <Content Include="Views\ThanhToanHoaDon\Index.cshtml" />
     <Content Include="Views\ThanhToanHoaDon\XacNhanThanhToan.cshtml" />
-    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Shared\_menu.cshtml" />
+    <Content Include="Views\Home\_menuHome.cshtml" />
+    <Content Include="Views\Shared\_menuMain.cshtml" />
+    <Content Include="Views\Home\SearchProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
