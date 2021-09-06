@@ -35,12 +35,7 @@ namespace PhucAnh_done.Areas.Admin.Controllers
             var model = dao.CreateNhanVien(nhanVien);
             if (model > 0)
             {
-                ModelState.AddModelError("", "Thêm mới thông tin khách hàng thành công");
                 return RedirectToAction("Index", "NhanVien");
-            }
-            else
-            {
-                ModelState.AddModelError("", "Cập nhật thông tin khách hàng không thành công");
             }
             return View(nhanVien);
         }
@@ -61,12 +56,7 @@ namespace PhucAnh_done.Areas.Admin.Controllers
             var model = dao.Update(nhanVien);
             if (model)
             {
-                ModelState.AddModelError("", "Cập nhật thông tin khách hàng thành công");
                 return RedirectToAction("Index", "NhanVien");
-            }
-            else
-            {
-                ModelState.AddModelError("", "Cập nhật thông tin khách hàng không thành công");
             }
             return View("Index");
         }

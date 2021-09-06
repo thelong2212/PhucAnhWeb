@@ -35,7 +35,6 @@ namespace PhucAnh_done.Areas.Admin.Controllers
             var model = dao.insert(phamLoaiSanPham);
             if (model > 0)
             {
-                ViewBag.Success = "Thêm mới thông tin khách hàng thành công";
                 return RedirectToAction("Index", "PhanLoaiSanPham");
             }
             else
@@ -61,12 +60,7 @@ namespace PhucAnh_done.Areas.Admin.Controllers
             var model = dao.update(phanLoaiSanPham);
             if (model)
             {
-                ViewBag.Success = "Thêm mới thông tin khách hàng thành công";
                 return RedirectToAction("Index", "PhanLoaiSanPham");
-            }
-            else
-            {
-                ViewBag.Success = "Cập nhật thông tin khách hàng KHÔNG thành công";
             }
 
             return View("Index");

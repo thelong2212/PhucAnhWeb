@@ -39,13 +39,8 @@ namespace PhucAnh_done.Areas.Admin.Controllers
             var dao = new KhachHangDAO();
             var model = dao.CreateKhachHang(khachHang);
             if (model>0)
-            {
-                ViewBag.Success= "Thêm mới thông tin khách hàng thành công";
+            {          
                 return RedirectToAction("Index", "KhachHang");
-            }
-            else
-            {
-                ViewBag.Success = "Thêm mới thông tin khách hàng KHÔNG thành công";
             }
             return View(khachHang);
         }
@@ -66,13 +61,9 @@ namespace PhucAnh_done.Areas.Admin.Controllers
             var model = dao.Update(khachHang);
             if (model)
             {
-                ViewBag.Success = "Thêm mới thông tin khách hàng thành công";
                 return RedirectToAction("Index", "KhachHang");
             }
-            else
-            {
-                ViewBag.Success = "Cập nhật thông tin khách hàng KHÔNG thành công";
-            }
+
 
             return View("Index");
         }

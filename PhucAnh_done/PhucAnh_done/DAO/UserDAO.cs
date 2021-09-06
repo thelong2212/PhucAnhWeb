@@ -78,7 +78,7 @@ namespace PhucAnh_done.DAO
                 db.SaveChanges();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -177,6 +177,11 @@ namespace PhucAnh_done.DAO
         public List<User> ListAll()
         {
             return db.Users.ToList();
+        }
+        public bool Account( string userName, string password)
+        {
+            var res = db.Users.Where(x => x.UserName == userName && x.Password==password ).SingleOrDefault();
+            return true;
         }
     }
 }

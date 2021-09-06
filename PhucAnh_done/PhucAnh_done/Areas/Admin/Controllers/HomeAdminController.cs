@@ -6,7 +6,8 @@ using System.Web.Mvc;
 
 namespace PhucAnh_done.Areas.Admin.Controllers
 {
-    public class HomeAdminController : BaseController
+    [Authorize]
+    public class HomeAdminController : Controller
     {
         // GET: Admin/Home
         public ActionResult Index()

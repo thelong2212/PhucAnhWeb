@@ -110,7 +110,7 @@ namespace PhucAnh_done.DAO
         {
             return db.SanPhams.Where(x => x.TenSanPham.Contains(keyword)).Select(x => x.TenSanPham).ToList();
         }
-        public List<SanPham> Search( string keyword, ref int totalRecord, int pageIndex = 1, int pageSize = 4)
+        public List<SanPham> Search( string keyword, ref int totalRecord, int pageIndex = 1, int pageSize = 8)
         {
             totalRecord = db.SanPhams.Where(x => x.TenSanPham.Contains(keyword)).Count();
             var model = db.SanPhams.Where(x =>x.TenSanPham.Contains(keyword)).OrderByDescending(x => x.SanPhamID).Skip((pageIndex - 1) * pageSize).Take(pageSize);

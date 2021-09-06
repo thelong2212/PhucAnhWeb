@@ -28,13 +28,7 @@
                         {
                             <div class="form-horizontal">
                                 <h4 style="text-align:center;color:blue">Cập nhật sản phẩm</h4>
-                                <hr />
-                                <div class="form-group">
-                                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
-                                    @if (ViewBag.Success != null)
-                                    {
-                                        <div class="alert alert-success">@ViewBag.Success</div>}
-                                </div>
+                               
 
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.TenSanPham, new { @class = " col-md-4" })

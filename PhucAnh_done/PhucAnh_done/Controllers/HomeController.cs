@@ -46,16 +46,16 @@ namespace PhucAnh_done.Controllers
             }
             return View();
         }
-        public JsonResult ListName(string keywword)
-        {
-            var data = new SanPhamDAO().ListName(keywword);
-            return Json(new
-            {
-                data = data,
-                status = true
-            }, JsonRequestBehavior.AllowGet);
-        }
-        public ActionResult SearchProduct(string keyword, int page = 1, int pageSize=4)
+        //public JsonResult ListName(string keywword)
+        //{
+        //    var data = new SanPhamDAO().ListName(keywword);
+        //    return Json(new
+        //    {
+        //        data,
+        //        status = true
+        //    }, JsonRequestBehavior.AllowGet);
+        //}
+        public ActionResult SearchProduct(string keyword, int page = 1, int pageSize=8)
         {
             using(var db= new ApplicationDbContext())
             {

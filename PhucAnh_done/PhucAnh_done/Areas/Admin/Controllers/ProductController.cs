@@ -8,7 +8,7 @@ using PhucAnh_done.Models;
 
 namespace PhucAnh_done.Areas.Admin.Controllers
 {
-    public class ProductController : BaseController
+    public class ProductController : Controller
     {
         // GET: Admin/Product
         public ActionResult Index(string Keyword, int page=1, int pageSize =10)
@@ -35,13 +35,10 @@ namespace PhucAnh_done.Areas.Admin.Controllers
             long id = dao.Create(sanPham);
             if (id > 0)
             {
-                ViewBag.Success = "Thêm mới thông tin khách hàng thành công";
+               
                 return RedirectToAction("Index", "Product");
             }
-            else
-            {
-                ViewBag.Success = "Thêm mới thông tin khách hàng KHÔNG thành công";
-            }
+            
             return View(sanPham);
         }
 
@@ -61,14 +58,10 @@ namespace PhucAnh_done.Areas.Admin.Controllers
             var model = dao.Update(sanPham);
             if (model)
             {
-                ViewBag.Success = "Thêm mới thông tin khách hàng thành công";
+                
                 return RedirectToAction("Index", "Product");
             }
-            else
-            {
-                ViewBag.Success = "Thêm mới thông tin khách hàng KHÔNG thành công"; 
-            }
-
+           
             return View("Index");
         }
 

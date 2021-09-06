@@ -148,10 +148,12 @@
     <Compile Include="Areas\Admin\Controllers\NhanVienController.cs" />
     <Compile Include="Areas\Admin\Controllers\PhanLoaiSanPhamController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserGroupController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Common\CommonGroup.cs" />
     <Compile Include="Common\CommonSession.cs" />
     <Compile Include="Common\MailHelper.cs" />
+    <Compile Include="CustomMembership\CustomMembershipProvider.cs" />
     <Compile Include="DAO\DanhMucSanPhamDAO.cs" />
     <Compile Include="DAO\DonHangDAO.cs" />
     <Compile Include="Common\Encryptor.cs" />
@@ -170,6 +172,7 @@
     <Compile Include="DAO\SanPhamDAO.cs" />
     <Compile Include="DAO\SanPhamDonHangDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="DAO\UserGroupDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -3527,6 +3530,9 @@
     <Content Include="Areas\Admin\Views\LoaiDMSP\Create.cshtml" />
     <Content Include="Areas\Admin\Views\LoaiDMSP\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\navbar.cshtml" />
+    <Content Include="Areas\Admin\Views\UserGroup\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\UserGroup\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\UserGroup\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

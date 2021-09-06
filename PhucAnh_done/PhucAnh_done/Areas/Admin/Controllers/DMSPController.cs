@@ -33,12 +33,8 @@ namespace PhucAnh_done.Areas.Admin.Controllers
             var model = dao.Insert(danhMucSanPham);
             if (model > 0)
             {
-                ViewBag.Success = "Thêm mới thông tin khách hàng thành công";
+                
                 return RedirectToAction("Index", "DMSP");
-            }
-            else
-            {
-                ViewBag.Success = "Thêm mới thông tin khách hàng KHÔNG thành công";
             }
             return View(danhMucSanPham);
         }
@@ -58,13 +54,10 @@ namespace PhucAnh_done.Areas.Admin.Controllers
             var model = dao.Update(danhMucSanPham);
             if (model)
             {
-                ViewBag.Success = "Thêm mới thông tin khách hàng thành công";
+               
                 return RedirectToAction("Index", "DMSP");
             }
-            else
-            {
-                ViewBag.Success = "Cập nhật thông tin khách hàng KHÔNG thành công";
-            }
+
 
             return View("Index");
         }

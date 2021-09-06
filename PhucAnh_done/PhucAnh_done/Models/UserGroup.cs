@@ -1,4 +1,4 @@
-namespace PhucAnh_done.Models
+﻿namespace PhucAnh_done.Models
 {
     using System;
     using System.Collections.Generic;
@@ -17,7 +17,7 @@ namespace PhucAnh_done.Models
         }
 
         public int UserGroupID { get; set; }
-
+        [Display(Name = "Tên nhóm người dùng")]
         [StringLength(50)]
         public string GroupName { get; set; }
 
