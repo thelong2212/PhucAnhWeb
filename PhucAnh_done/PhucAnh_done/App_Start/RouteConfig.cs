@@ -20,6 +20,12 @@ namespace PhucAnh_done
               );
 
             routes.MapRoute(
+                name: "Danh-Muc-San-Pham",
+                url: "Category-product/{ID}",
+                new { controller = "DanhMucSanPham", action = "DanhMucSanPham" }
+             );
+
+            routes.MapRoute(
                   name: "PhanDanhMucSanPham",
                   url: "productCategoryClass/{ID}",
                   new { controller = "DanhMucSanPham", action = "DMTheoPhanLoai" }

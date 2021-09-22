@@ -3573,6 +3573,8 @@
     <Content Include="Views\Home\_menuHome.cshtml" />
     <Content Include="Views\Shared\_menuMain.cshtml" />
     <Content Include="Views\Home\SearchProduct.cshtml" />
+    <Content Include="Views\Layout\mobile_header.cshtml" />
+    <Content Include="Views\DanhMucSanPham\DanhMucSanPham.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

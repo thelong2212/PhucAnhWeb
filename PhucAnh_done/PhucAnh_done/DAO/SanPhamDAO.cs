@@ -96,6 +96,11 @@ namespace PhucAnh_done.DAO
             var loaiDMSP = db.SanPhams.Where(x => x.DanhMucSanPhamPID == id).OrderByDescending(x => x.SanPhamID).ToList();
             return loaiDMSP;
         }
+        public List<SanPham> DanhMucSanPham(int? id)
+        {
+            var loaiDMSP = db.SanPhams.Where(x => x.DanhMucSanPhamID == id).OrderByDescending(x => x.SanPhamID).ToList();
+            return loaiDMSP;
+        }
         public List<SanPham> DanhMucSanPhamTheoPhanLoai(int? id)
         {
             var DMSPTheoPhanLoai = db.SanPhams.Where(x => x.PhanLoaiSanPhamID == id).OrderByDescending(x => x.SanPhamID).ToList();

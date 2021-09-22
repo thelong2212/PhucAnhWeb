@@ -42,7 +42,7 @@
                                         @foreach (var itemC in loaiDMSP.Where(x => x.DanhMucSanPhamPID == PhanLoaiDM.DanhMucSanPhamPID))
                                         {
                                             <div class="box-cat">
-                                                <a class="ti-menu" href="#"><b>@itemC.TenDanhMucSanPham</b></a>
+                                                <a class="ti-menu" href="/Category-product/@itemC.DanhMucSanPhamID"><b>@itemC.TenDanhMucSanPham</b></a>
                                                 <div class="new-sub">
                                                     @foreach (var item in DanhMuc.Where(x => x.DanhMucSanPhamID == itemC.DanhMucSanPhamID))
                                                     {
@@ -79,16 +79,16 @@
                     <div class="col-sm-8 slideshow">
                         <div class="your-class">
                             <div class="item-banner">
-                                <img src="~/asset/client/image/banner/01_Jul8a446134b0f9e4216226104e84a68422.jpg" alt="">
+                                <img src="~/asset/client/image/banner/01_Jul3fb56b3918af76d8c84c17018d1dfa8e.jpg" alt="">
                             </div>
                             <div class="item-banner">
-                                <img src="~/asset/client/image/banner/01_Jul463236f7bca1021986589d404430fa72.jpg" alt="">
+                                <img src="~/asset/client/image/banner/01_Jul8a446134b0f9e4216226104e84a68422.jpg" alt="">
                             </div>
                             <div class="item-banner">
                                 <img src="~/asset/client/image/banner/01_Jul9d373af3c1d8dd5b8e92c19f2b9ce13f.jpg" alt="">
                             </div>
                             <div class="item-banner">
-                                <img src="~/asset/client/image/banner/01_Jul8a446134b0f9e4216226104e84a68422.jpg" alt="">
+                                <img src="~/asset/client/image/banner/01_Jula4d68d1a840ca685d4b803db65a9cb25.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -130,13 +130,13 @@
                                             <i>Giá bán: </i>@(itemHot.GiaBan+"VND")
                                         </span>
                                         <span id="pro-icon">
-                                            <i class="fas fa-check" id="tick">
+                                            <span class="fas fa-check" id="tick">
                                                 Có
                                                 hàng
-                                            </i>
-                                            <i class="fas fa-shopping-cart" id="cart">
+                                            </span>
+                                            <a href="/detailProduct/@itemHot.SanPhamID" class="fas fa-shopping-cart" id="cart">
                                                 Giỏ hàng
-                                            </i>
+                                            </a>
                                         </span>
                                     </div>
                                 }
@@ -169,13 +169,13 @@
                                             <i>Giá bán: </i>@(itemNew.GiaBan+"VND")
                                         </span>
                                         <span id="pro-icon">
-                                            <i class="fas fa-check" id="tick">
+                                            <span class="fas fa-check" id="tick">
                                                 Có
                                                 hàng
-                                            </i>
-                                            <i class="fas fa-shopping-cart" id="cart">
+                                            </span>
+                                            <a href="/detailProduct/@itemNew.SanPhamID" class="fas fa-shopping-cart" id="cart">
                                                 Giỏ hàng
-                                            </i>
+                                            </a>
                                         </span>
                                     </div>
                                 }

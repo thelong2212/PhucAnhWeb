@@ -34,14 +34,16 @@
 
 @Html.Partial("~/Views/Home/_menuHome.cshtml")
 <section>
-    <div class="container cont">
+    <div class="container">
         <div>
             @foreach (LoaiDanhMucSanPham dm in loaiDanhMucSanPham)
             {
                 <div class="name-product">
-
-                    <div id="name-product">
-                        <p>@dm.TenLoaiDanhMucSanPham</p>
+                    <div id="title_product">
+                        <span class="span_title">
+                            @dm.TenLoaiDanhMucSanPham
+                            <a href="/productCategory/@dm.DanhMucSanPhamPID">Xem tất cả <i class="fas fa-angle-double-right"></i></a>
+                        </span>
                     </div>
                 </div>
                 <div class="row img-table">
@@ -57,15 +59,32 @@
                                 <i>Giá bán: </i>@(item.GiaBan)
                             </span>
                             <span id="pro-icon">
-                                <i class="fas fa-check" id="tick">
+                                <span class="fas fa-check" id="tick">
                                     Có
                                     hàng
-                                </i>
-                                <i class="fas fa-shopping-cart" id="cart">
+                                </span>
+                                <a href="/detailProduct/@item.SanPhamID" class="fas fa-shopping-cart" id="cart">
                                     Giỏ hàng
-                                </i>
+                                </a>
                             </span>
 
+                        </div>
+                    }
+                </div>
+                <div class="responsive">
+                    @foreach (var item in sanPham.Where(x => x.DanhMucSanPhamPID == dm.DanhMucSanPhamPID).Take(8))
+                    {
+                        <div class="mobile_product">
+                            <div class="col-md-3 col" id="img-table-1">
+                                <img src="@Url.Content(item.AnhSanPham)" alt="">
+                                <a class="name_product_mobile" href="/detailProduct/@item.SanPhamID">@item.TenSanPham</a>
+
+                            </div>
+                            <div>
+                                <span id="price">
+                                    <i>Giá bán: </i>@(item.GiaBan)
+                                </span>
+                            </div>
                         </div>
                     }
                 </div>

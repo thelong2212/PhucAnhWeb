@@ -8,7 +8,7 @@
     var ImgSanPham = ViewData["ImgSanPham"] as List<ImageSanPham> ?? new List<ImageSanPham>();
 }
 
- @Html.Partial("~/Views/Shared/_menu.cshtml");
+ @Html.Partial("~/Views/Shared/_menu.cshtml")
 <section>
     <div class="container ">
         <div id="breadcrumb">
@@ -88,16 +88,16 @@
                         <table>
                             <tbody>
                                 <tr>
-                                    <td>Giá niêm yết</td>
+                                    <td id="title_price">Giá niêm yết</td>
                                     <td id="price-listing"><b>@(sanPham.GiaNiemYet+ "₫")</b></td>
                                 </tr>
                                 <tr>
-                                    <td><b>Giá bán:</b></td>
+                                    <td id="title_price"><b>Giá bán:</b></td>
                                     <td id="price"><b>@(sanPham.GiaBan+ "₫")</b>[Giá đã có VAT]</td>
                                 </tr>
                                 <tr>
-                                    <td><b>Giá khuyến mãi</b></td>
-                                    <td>
+                                    <td id="title_price"><b>Giá khuyến mãi</b></td>
+                                    <td id="saleID">
                                         <span id="sale1"><b>@(sanPham.GiaNiemYet+ "₫")</b></span>
                                         <span id="sale2">
                                             Giảm thêm 200.00 ₫ khi quẹt VNPAY <a href="">
@@ -249,7 +249,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col_detailPro">
                 <div>
                     <p><a href="">BẠN MUỐN ĐẾN CỦA HÀNG?</a></p>
                 </div>
@@ -345,18 +345,16 @@
         <div class="pro-h4">
             <h4>SẢN PHẨM TƯƠNG ĐƯƠNG</h4>
         </div>
-        <div class="row img-table">
+        <div class="row img_table">
             @foreach (SanPham item in dsSanPhamLienQuan)
             {
                 if (item.AnhSanPham == null)
                 {
                     item.AnhSanPham = "~/Images/productImage/a.jpg";
                 }
-                <div class="col" id="img-table-1">
-                    <a href="">
+                <div class="col-md-3 col" id="img-table-1">
                         <img src="@Url.Content(item.AnhSanPham)" alt="">
-                    </a>
-                    <a href="">@item.TenSanPham</a>
+                    <a href="/detailProduct/@item.SanPhamID">@item.TenSanPham</a>
                     <span style="font-size: 12px;">
                         <i id="list-price">Giá niêm miết: </i>@(item.GiaNiemYet+ "VND")
                     </span>
@@ -364,7 +362,26 @@
                         <i>Giá bán: </i>@(item.GiaBan+ "VND")
                     </span>
                 </div>
+
             }
         </div>
+        
+        <div class="responsive">
+            @foreach (SanPham item in dsSanPhamLienQuan)
+            {
+                <div class="mobile_product">
+                    <div class="col-md-3 col" id="img-table-1">
+                        <img src="@Url.Content(item.AnhSanPham)" alt="">
+                        <a class="name_product_mobile" href="/detailProduct/@item.SanPhamID">@item.TenSanPham</a>
+
+                    </div>
+                    <div>
+                        <span id="price">
+                            <i>Giá bán: </i>@(item.GiaBan)
+                        </span>
+                    </div>
+                </div>
+            }
+            </div>
     </div>
 </section>

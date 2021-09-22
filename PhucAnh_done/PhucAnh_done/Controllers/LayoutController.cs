@@ -27,6 +27,28 @@ namespace PhucAnh_done.Controllers
             }
             var UserLogin = UserDAO.Instance.GetByID(sessionUserLogin.UserName);
             ViewData["UserLogin"] = UserLogin;
+            using(var db= new ApplicationDbContext())
+            {
+                var phanLoaiSanPham = db.PhanLoaiSanPhams.ToList();
+                var danhMucSanPham = db.DanhMucSanPhams.ToList();
+                var loaiDanhMucSanPham = db.LoaiDanhMucSanPhams.ToList();
+                var phanLoaiTheoHang = db.PhanLoaiTheoHangSps.ToList();
+                var sanPham = db.SanPhams.ToList();
+                var loaiDMSP = from dmsp in danhMucSanPham
+                               join loaiDM in loaiDanhMucSanPham on dmsp.DanhMucSanPhamPID equals loaiDM.DanhMucSanPhamPID
+                               where dmsp.DanhMucSanPhamPID == loaiDM.DanhMucSanPhamPID
+                               select dmsp;
+
+                var DanhMuc = from plsp in phanLoaiSanPham
+                              join dm in danhMucSanPham on plsp.DanhMucSanPhamID equals dm.DanhMucSanPhamID
+                              where dm.Status == true
+                              select plsp;
+                
+                ViewData["phanLoaiTheoHang"] = phanLoaiTheoHang.ToList();
+                ViewData["loaiDanhMucSanPham"] = loaiDanhMucSanPham.ToList();
+                ViewData["loaiDMSP"] = loaiDMSP.ToList();
+                ViewData["DanhMuc"] = DanhMuc.ToList();
+            }
             return View();
 
         }

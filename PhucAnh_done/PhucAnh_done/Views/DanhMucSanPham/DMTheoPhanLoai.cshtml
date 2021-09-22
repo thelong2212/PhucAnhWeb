@@ -14,7 +14,7 @@
                 <a href=""><span>@TenDMPhanTheoLoai</span> </a>
             </div>
         </div>
-        <div class="row">
+        <div class="row slider_product">
             <div class="col-md-7 slider" id="slider1">
                 <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -64,7 +64,7 @@
     </div>
 </section>
 <section>
-    <div class="container cont">
+    <div class="container">
         <div class="row">
             <div class="col-md-9 product">
                 <div class="SoLuongSP">
@@ -77,26 +77,40 @@
                         {
                             item.AnhSanPham = "~/images/product/a.jpg";
                         }
-                    <div class="col-md-3 col" id="img-table-1">
-                        <img src="@Url.Content(item.AnhSanPham)" alt="">
-                        <a href="/detailProduct/@item.SanPhamID">@item.TenSanPham</a>
-                        <span style="font-size: 12px;">
-                            <i id="list-price">Giá niêm miết: </i>@(item.GiaNiemYet + "VND")
-                        </span>
-                        <span id="price">
-                            <i>Giá bán: </i>@(item.GiaBan)
-                        </span>
-                        <span id="pro-icon">
-                            <i class="fas fa-shopping-cart" id="cart">
-                                Giỏ hàng
-                            </i>
-                        </span>
-                    </div>
+                        <div class="col-md-3 col" id="img-table-1">
+                            <img src="@Url.Content(item.AnhSanPham)" alt="">
+                            <a href="/detailProduct/@item.SanPhamID">@item.TenSanPham</a>
+                            <span style="font-size: 12px;">
+                                <i id="list-price">Giá niêm miết: </i>@(item.GiaNiemYet + "VND")
+                            </span>
+                            <span id="price">
+                                <i>Giá bán: </i>@(item.GiaBan)
+                            </span>
+                            <span id="pro-icon">
+                                <a href="/detailProduct/@item.SanPhamID" class="fas fa-shopping-cart" id="cart">
+                                    Giỏ hàng
+                                </a>
+                            </span>
+                        </div>
+                        <div class="responsive">
+                                <div class="mobile_product">
+                                    <div class="col-md-3 col" id="img-table-1">
+                                        <img src="@Url.Content(item.AnhSanPham)" alt="">
+                                        <a class="name_product_mobile" href="/detailProduct/@item.SanPhamID">@item.TenSanPham</a>
+
+                                    </div>
+                                    <div>
+                                        <span id="price">
+                                            <i>Giá bán: </i>@(item.GiaBan)
+                                        </span>
+                                    </div>
+                                </div>                        
+                        </div>
                     }
                 </div>
 
             </div>
-            <div class="col-md-3 border">
+            <div class="col-md-3 check_box">
                 <div class="filter-left">
                     <div class="title-logo">Thương hiệu</div>
                     <div class="list two-col">

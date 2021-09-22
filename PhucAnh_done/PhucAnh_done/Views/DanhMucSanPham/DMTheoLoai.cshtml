@@ -15,7 +15,7 @@
                 <a href=""><span>@Ten</span> </a>
             </div>
         </div>
-        <div class="row">
+        <div class="row slider_product">
             <div class="col-md-7 slider" id="slider1">
                 <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -65,16 +65,23 @@
     </div>
 </section>
 <section>
-    <div class="container cont">
+    <div class="container">
         <div>
             @foreach (var dm in TenLoaiDMSP)
             {
                 <div class="name-product">
-                    <div id="name-product">
-                        <p>@dm.TenDanhMucSanPham</p>
+                    <div id="title_product">
+                        <span class="span_title">
+                            @dm.TenDanhMucSanPham
+                            <a href="/Category-product/@dm.DanhMucSanPhamID">Xem tất cả <i class="fas fa-angle-double-right"></i></a>
+                        </span>
                     </div>
                 </div>
-
+                @*<div class="name-product">
+                <div id="name-product">
+                    <p>@dm.TenDanhMucSanPham</p>
+                </div>
+            </div>*@
                 <div class="row img-table">
                     @foreach (var item in ListLoaiDMSP.Where(x => x.DanhMucSanPhamID == dm.DanhMucSanPhamID))
                     {
@@ -102,11 +109,32 @@
                                     <i>Giá bán: </i>@(item.GiaBan)
                                 </span>
                                 <span id="pro-icon">
-                                    <i class="fas fa-shopping-cart" id="cart">
+                                    <a href="/detailProduct/@item.SanPhamID" class="fas fa-shopping-cart" id="cart">
                                         Giỏ hàng
-                                    </i>
+                                    </a>
                                 </span>
                             }
+                        </div>
+                    }
+                </div>
+                <div class="responsive">
+                    @foreach (var item in ListLoaiDMSP.Where(x => x.DanhMucSanPhamID == dm.DanhMucSanPhamID))
+                    {
+                        if (item.AnhSanPham == null)
+                        {
+                            item.AnhSanPham = "~/images/product/a.jpg";
+                        }
+                        <div class="mobile_product">
+                            <div class="col-md-3 col" id="img-table-1">
+                                <img src="@Url.Content(item.AnhSanPham)" alt="">
+                                <a class="name_product_mobile" href="/detailProduct/@item.SanPhamID">@item.TenSanPham</a>
+
+                            </div>
+                            <div>
+                                <span id="price">
+                                    <i>Giá bán: </i>@(item.GiaBan)
+                                </span>
+                            </div>
                         </div>
                     }
                 </div>

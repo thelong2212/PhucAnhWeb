@@ -86,8 +86,6 @@ C:\Users\Admin\Desktop\PhucAnh_done\PhucAnh_done\obj\Debug\PhucAnh_done.csproj.C
 C:\Users\Admin\Desktop\PhucAnh_done\PhucAnh_done\obj\Debug\PhucAnh_done.dll
 C:\Users\Admin\Desktop\PhucAnh_done\PhucAnh_done\obj\Debug\PhucAnh_done.pdb
 C:\Users\Admin\Desktop\PhucAnh_done\PhucAnh_done\obj\Debug\PhucAnh_done.csproj.AssemblyReference.cache
-C:\Users\Admin\Desktop\PhucAnhWeb\PhucAnh_done\PhucAnh_done\obj\Debug\PhucAnh_done.csproj.AssemblyReference.cache
-C:\Users\Admin\Desktop\PhucAnhWeb\PhucAnh_done\PhucAnh_done\obj\Debug\PhucAnh_done.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\PhucAnhWeb\PhucAnh_done\PhucAnh_done\bin\PhucAnh_done.dll.config
 C:\Users\Admin\Desktop\PhucAnhWeb\PhucAnh_done\PhucAnh_done\bin\PhucAnh_done.dll
 C:\Users\Admin\Desktop\PhucAnhWeb\PhucAnh_done\PhucAnh_done\bin\PhucAnh_done.pdb
@@ -171,6 +169,8 @@ C:\Users\Admin\Desktop\PhucAnhWeb\PhucAnh_done\PhucAnh_done\bin\System.Web.WebPa
 C:\Users\Admin\Desktop\PhucAnhWeb\PhucAnh_done\PhucAnh_done\bin\Newtonsoft.Json.xml
 C:\Users\Admin\Desktop\PhucAnhWeb\PhucAnh_done\PhucAnh_done\bin\Antlr3.Runtime.pdb
 C:\Users\Admin\Desktop\PhucAnhWeb\PhucAnh_done\PhucAnh_done\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Admin\Desktop\PhucAnhWeb\PhucAnh_done\PhucAnh_done\obj\Debug\PhucAnh_done.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\PhucAnhWeb\PhucAnh_done\PhucAnh_done\obj\Debug\PhucAnh_done.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\PhucAnhWeb\PhucAnh_done\PhucAnh_done\obj\Debug\PhucAnh_done.csproj.CopyComplete
 C:\Users\Admin\Desktop\PhucAnhWeb\PhucAnh_done\PhucAnh_done\obj\Debug\PhucAnh_done.dll
 C:\Users\Admin\Desktop\PhucAnhWeb\PhucAnh_done\PhucAnh_done\obj\Debug\PhucAnh_done.pdb

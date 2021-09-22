@@ -11,8 +11,8 @@
         <div>
             <h5>Giỏ hàng của bạn (@Model.TongSoLuong sản phẩm)</h5>
         </div>
-        <div class="row">
-            <div class="col-9">
+        <div class="row row_mobile">
+            <div class="col-9 mobile_col_cart">
                 <div class="card">
                     <div class="card-body">
                         @if (Model.Gio.Count <= 0)
@@ -32,7 +32,7 @@
                                             <img src="@Url.Content(AnhSanPham)" style="width: 100%;" class="img-responsive" alt="">
                                         }
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-5 name_cart_product">
                                         <a style="font-size: 18px" href="/productDetail/@item.SanPham.SanPhamID"><span>Tên sản phẩm: @item.SanPham.TenSanPham</span></a>
                                         <p>Giá sản phẩm : @item.SanPham.GiaBan.Value VNĐ</p>
                                     </div>
@@ -59,7 +59,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-3 mobile_col_cart">
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 style="margin:0">Thành tiền: @Model.TongTien VNĐ</h5>

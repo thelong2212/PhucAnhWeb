@@ -46,6 +46,40 @@ namespace PhucAnh_done.Controllers
             }
             return View();
         }
+        public ActionResult DanhMucSanPham(int? ID)
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                if (ID.HasValue)
+                {
+                    //var TenDMSP = db.DanhMucSanPhams.Where(x => x.DanhMucSanPhamID == ID);
+                    var TenDMSP = db.DanhMucSanPhams.Where(x => x.DanhMucSanPhamID == ID).Select(x => x.TenDanhMucSanPham).FirstOrDefault();
+                    var ListDMSP = new SanPhamDAO().DanhMucSanPham(ID);
+
+                    var phanLoaiSanPham = db.PhanLoaiSanPhams.ToList();
+                    var danhMucSanPham = db.DanhMucSanPhams.ToList();
+                    var loaiDanhMucSanPham = db.LoaiDanhMucSanPhams.ToList();
+                    var phanLoaiTheoHang = db.PhanLoaiTheoHangSps.ToList();
+                    var loaiDMSP = from dmsp in danhMucSanPham
+                                   join loaiDM in loaiDanhMucSanPham on dmsp.DanhMucSanPhamPID equals loaiDM.DanhMucSanPhamPID
+                                   where dmsp.DanhMucSanPhamPID == loaiDM.DanhMucSanPhamPID
+                                   select dmsp;
+                    var DanhMuc = from plsp in phanLoaiSanPham
+                                  join dm in danhMucSanPham on plsp.DanhMucSanPhamID equals dm.DanhMucSanPhamID
+                                  where dm.Status == true
+                                  select plsp;
+
+                    ViewBag.TenDMSP = TenDMSP;
+                    ViewData["ListDMSP"] = ListDMSP.ToList();
+
+                    ViewData["phanLoaiTheoHang"] = phanLoaiTheoHang.ToList();
+                    ViewData["loaiDanhMucSanPham"] = loaiDanhMucSanPham.ToList();
+                    ViewData["loaiDMSP"] = loaiDMSP.ToList();
+                    ViewData["DanhMuc"] = DanhMuc.ToList();
+                }
+            }
+            return View();
+        }
         public ActionResult DMTheoPhanLoai(int? ID)
         {
             using (var db = new ApplicationDbContext())

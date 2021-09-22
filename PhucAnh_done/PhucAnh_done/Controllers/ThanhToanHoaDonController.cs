@@ -61,7 +61,7 @@ namespace PhucAnh_done.Controllers
                 var donHang = new DonHang();
                 var spDonHang = new SanPhamDonHang();
                 var sessionGioHang = Session[Common.CommonSession.CART_SESSION] as GioHang;
-                // insert mot don hang roi: => DonHangId => thi dong thoi minh cung phai insert vao bang san pham don hang
+               
                 kh.HoTen = Request.Form["hoTen"];
                 kh.SoDienThoai = Convert.ToInt32(Request.Form["soDienThoai"]);
                 kh.Email = Request.Form["email"];
@@ -73,7 +73,7 @@ namespace PhucAnh_done.Controllers
                     donHang.KhachHangID = khacHangID;
                     donHang.NgayNhan = Convert.ToDateTime(Request.Form["ngayNhan"]);
                     donHang.DiaChiNhanHangChiTiet = Request.Form["diaChiNhanHang"];
-                    donHang.GhiChu = Request.Form["ghiChu"].ToString();
+                    donHang.GhiChu = Request.Form["ghiChu"];
                     donHang.GiaTriDonHang = sessionGioHang.TongTien;
                     var donHangId = DonHangDAO.Instance.insertDonHang(donHang);
                     if (donHangId != 0)

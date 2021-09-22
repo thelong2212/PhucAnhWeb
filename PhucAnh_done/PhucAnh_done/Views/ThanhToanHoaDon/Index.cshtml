@@ -10,11 +10,11 @@
 }
 @model GioHang
 
-@Html.Partial("~/Views/Shared/_menu.cshtml");
+@Html.Partial("~/Views/Shared/_menu.cshtml")
 <section>
     <div class="container">
         <div class="row nowrap">
-            <div class="col-8 col-lg-8 col-sm-8">
+            <div class="col-8 col-lg-8 col-sm-8" id="col8_pay_ID">
                 <div>
                     <h5> Tổng sản phẩm: @Model.TongSoLuong sản phẩm</h5>
                 </div>
@@ -65,7 +65,7 @@
                     <h5>Tổng tiền: @Model.TongTien (VND)</h5>
                 </div>
             </div>
-            <div class="col-4 col-lg-4 col-sm-4">
+            <div class="col-4 col-lg-4 col-sm-4" id="col4_pay_ID">
                 <h5>Xác nhận thông tin thanh toán</h5>
                 <div>
                     @{
@@ -91,10 +91,6 @@
                                 <div class="form-group">
                                     <label for="diaChiNhanHang">Địa chỉ nhận hàng</label>
                                     <input class="form-control" required type="text" name="diaChiNhanHang" id="diaChiNhanHang" placeholder="địa chỉ nhận hàng" value="@UserLogin.DiaChiChiTiet" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="ngayNhan">Ngày nhận</label>
-                                    <input class="form-control" type="date" required name="ngayNhan" id="ngayNhan" placeholder="Ngày nhận" />
                                 </div>
                                 <div class="form-group">
                                     <label for="ghiChu">Ghi chú</label>
@@ -125,10 +121,6 @@
                                 <div class="form-group">
                                     <label for="diaChiNhanHang">Địa chỉ nhận hàng</label>
                                     <input class="form-control" required type="text" name="diaChiNhanHang" id="diaChiNhanHang" placeholder="địa chỉ nhận hàng" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="ngayNhan">Ngày nhận</label>
-                                    <input class="form-control" type="date" required name="ngayNhan" id="ngayNhan" placeholder="Ngày nhận" />
                                 </div>
                                 <div class="form-group">
                                     <label for="ghiChu">Ghi chú</label>
