@@ -2,7 +2,7 @@
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var Ten = ViewBag.TenLoaiDMSP as string;
+    var TenLDMSP = ViewBag.TenLDMSP as string;
     var TenLoaiDMSP = ViewData["TenLoaiDMSP"] as List<DanhMucSanPham> ?? new List<DanhMucSanPham>();
     var ListLoaiDMSP = ViewData["ListLoaiDMSP"] as List<SanPham> ?? new List<SanPham>();
 
@@ -12,7 +12,7 @@
     <div class="container">
         <div id="breadcrumb">
             <div>
-                <a href=""><span>@Ten</span> </a>
+                <a href=""><span>@TenLDMSP</span> </a>
             </div>
         </div>
         <div class="row slider_product">

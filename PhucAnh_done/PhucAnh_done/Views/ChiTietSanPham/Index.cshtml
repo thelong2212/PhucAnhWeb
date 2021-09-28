@@ -123,18 +123,37 @@
 
                         </p>
                         <div class="button">
-                            <button class="btn1">
-                                <a href="/add/@sanPham.SanPhamID">
-                                    <span><b>MUA NGAY</b></span>
-                                    <span><a>Giao hàng tận nơi nhanh chóng</a></span>
-                                </a>
-                            </button>
-                            <button class="btn2">
-                                <a href="/add/@sanPham.SanPhamID">
-                                    <span><b>MUA TRẢ GÓP</b></span>
-                                    <span><a>Thủ tục đơn giản</a></span>
-                                </a>
-                            </button>
+                            @if (Session[PhucAnh_done.Common.CommonSession.USER_SESSION] == null)
+                            {
+                                <button class="btn1">
+                                    <a href="/login">
+                                        <span><b>MUA NGAY</b></span>
+                                        <span><a>Giao hàng tận nơi nhanh chóng</a></span>
+                                    </a>
+                                </button>
+                                <button class="btn2">
+                                    <a href="/login">
+                                        <span><b>MUA TRẢ GÓP</b></span>
+                                        <span><a>Thủ tục đơn giản</a></span>
+                                    </a>
+                                </button>
+                            }
+                            else
+                            {
+                                <button class="btn1">
+                                    <a href="/add/@sanPham.SanPhamID">
+                                        <span><b>MUA NGAY</b></span>
+                                        <span><a>Giao hàng tận nơi nhanh chóng</a></span>
+                                    </a>
+                                </button>
+                                <button class="btn2">
+                                    <a href="/add/@sanPham.SanPhamID">
+                                        <span><b>MUA TRẢ GÓP</b></span>
+                                        <span><a>Thủ tục đơn giản</a></span>
+                                    </a>
+                                </button>
+                            }
+
                         </div>
                         <div class="sale">
                             <ul>
